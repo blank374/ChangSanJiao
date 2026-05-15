@@ -1,0 +1,27 @@
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.76\textwidth]{第三题/figures/q3_profit_compare.png}
+    \caption{各工作日午餐预计利润分布}
+    \label{fig:q3_profit_compare}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.88\textwidth]{第三题/figures/q3_preference_revision_compare.png}
+    \caption{消费偏好修正前后主要指标变化率}
+    \label{fig:q3_preference_revision_compare}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.68\textwidth]{第三题/figures/q3_related_dish_ratio_compare.png}
+    \caption{消费偏好修正前后关联菜品占比对比}
+    \label{fig:q3_related_dish_ratio_compare}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.72\textwidth]{第三题/figures/q3_abc_structure_compare.png}
+    \caption{消费偏好修正前后ABC类菜品结构对比}
+    \label{fig:q3_abc_structure_compare}
+\end{figure}
