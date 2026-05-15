@@ -1,0 +1,14 @@
+\begin{table}[htbp]
+    \centering
+    \caption{问题三不同优化方法效果比较}
+    \label{tab:q3_method_comparison}
+    \begin{tabular}{cccccc}
+        \toprule
+        方法 & 平均预计利润 & 销售额偏差 & 营养偏差 & 平均菜品数 & 综合评分 \\
+        \midrule
+        NSGA-II & 1859.57 & 0.5746 & 0.1960 & 30.80 & 0.6785 \\
+        多目标整数规划 & 1473.08 & 0.2467 & 0.1388 & 31.80 & 0.6500 \\
+        贪心算法 & 3170.55 & 1.6894 & 0.5485 & 20.40 & 0.3500 \\
+        \bottomrule
+    \end{tabular}
+\end{table}

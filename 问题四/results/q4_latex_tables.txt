@@ -1,0 +1,60 @@
+\begin{equation}
+w_i=0.6s_i+0.4o_i,\quad
+w_i'=\frac{\ln(1+\lambda w_i)}{\ln(1+\lambda \max_i w_i)},\quad \lambda=50,
+\end{equation}
+其中，$s_i$ 表示菜品销售重量占比，$o_i$ 表示订单渗透率，$w_i'$ 为进入优化模型的压缩偏好权重。
+
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{多目标优化算法比较}
+\label{tab:q4_algorithm_comparison}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cccccc}
+\toprule
+方法 & 基本思想 & 适用场景 & 优点 & 局限性 & 本文是否采用 \\
+\midrule
+NSGA-II & 非支配排序与拥挤距离保持种群多样性 & 2-4 个目标、约束清晰、需要 Pareto 候选集的问题 & 经典稳定、参数较少、解释性强、实现成熟 & 目标很多时选择压力下降，需调节种群规模 & 采用，作为主模型 \\
+NSGA-III & 在非支配排序基础上用参考方向引导解分布 & many-objective 多目标问题 & 高维目标下 Pareto 分布更均匀 & 参考方向设置增加解释与调参成本 & 不作为主模型 \\
+SMS-EMOA & 以超体积贡献衡量个体优劣并逐步进化 & 重视 Pareto 前沿质量和超体积指标的问题 & 理论评价指标明确，前沿质量可能较高 & 超体积计算成本高，论文解释复杂 & 作为拓展对比 \\
+AGE-MOEA & 自适应估计 Pareto 前沿几何形状指导选择 & 前沿形状复杂且希望自适应搜索的问题 & 对不同前沿形状具有适应性 & 方法较新，建模赛论文解释成本较高 & 作为拓展对比 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{不同价位套餐优化结果}
+\label{tab:q4_package_result}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ccccccccc}
+\toprule
+价位 & 菜品组合 & 总价格/元 & 热量/kcal & 碳水/g & 蛋白质/g & 脂肪/g & 膳食纤维/g & 预计利润/元 \\
+\midrule
+10 & 大排、青椒水面筋、土豆丝/小青菜 & 9.982 & 490.0 & 41.8 & 28.5 & 23.2 & 4.4 & 3.494 \\
+15 & 付皮包、葱油芋头/红烧萝卜、椒盐带鱼、素烧鹅 & 14.996 & 730.0 & 85.6 & 36.5 & 29.2 & 8.3 & 5.248 \\
+20 & 葱油鸡、付皮包、千张结烧肉、青瓜付竹肉片、素烧鹅 & 20.007 & 1030.0 & 82.0 & 62.0 & 52.0 & 9.0 & 7.002 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{NSGA-II 与贪心算法结果对比}
+\label{tab:q4_nsga2_greedy_compare}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cccccccc}
+\toprule
+价位 & 方法 & 总价格/元 & 菜品数量 & 偏好得分 & 营养均衡得分 & 预计利润/元 & 综合评分 \\
+\midrule
+10 & NSGA-II & 9.982 & 3 & 0.680647 & 0.8563 & 3.494 & 0.7641 \\
+10 & 贪心算法 & 9.81 & 3 & 1.554936 & 0.7524 & 3.434 & 0.7611 \\
+15 & NSGA-II & 14.996 & 4 & 0.74403 & 0.9457 & 5.248 & 0.7878 \\
+15 & 贪心算法 & 14.843 & 3 & 1.598035 & 0.6634 & 5.195 & 0.7295 \\
+20 & NSGA-II & 20.007 & 5 & 1.217054 & 0.8192 & 7.002 & 0.7983 \\
+20 & 贪心算法 & 20.162 & 4 & 1.922698 & 0.6068 & 7.057 & 0.7226 \\
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+    \centering
+    \caption{问题二模型预测误差评价结果}
+    \label{tab:q2_error_evaluation}
+    \begin{tabular}{ccccc}
+        \toprule
+        预测指标 & 最终模型 & MAE & RMSE & MAPE/\% \\
+        \midrule
+        就餐人数 & KNN & 30.781 & 51.676 & 19.93 \\
+        销售总额 & ExtraTrees & 533.253 & 880.064 & 27.95 \\
+        热量需求 & KNN & 27373.317 & 42487.815 & 22.54 \\
+        碳水需求 & KNN & 2876.056 & 4121.720 & 22.50 \\
+        蛋白质需求 & ElasticNet & 1635.315 & 2559.323 & 29.66 \\
+        脂肪需求 & 优化KNN & 1256.909 & 1996.440 & 28.19 \\
+        膳食纤维需求 & KNN & 260.315 & 371.103 & 24.80 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
